@@ -20,4 +20,12 @@
             </table>
         </form>
     </div>
-<?php include("rodape.php"); ?>
+
+<?php 
+    if(array_key_exists("adicionado", $_GET) && $_GET["adicionado"]==true ) { ?>
+        <p class="text-success"> Produto '<?=  $nome; ?>' de valor <? echo $preco; ?> reais adicionado com sucesso! </p>
+<?php 
+    }
+    
+    include("rodape.php"); 
+?>

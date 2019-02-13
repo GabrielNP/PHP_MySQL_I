@@ -1,8 +1,16 @@
 <?php
     include("cabecalho.php");
     include("conecta.php"); 
-    include('produtoController.php');
+    include("produtoController.php");
+
+   $nome   = $_GET["nome"];
+    if(array_key_exists("removido", $_GET) && $_GET["removido"]=="true") {
 ?>
+        <p class="text-success">Produto removido!</p>
+<?php
+    }
+?>
+
 <table class="table table-striped table-bordered">
     <?php
         $produtos = listaProdutos($conexao);
