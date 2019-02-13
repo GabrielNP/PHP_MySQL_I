@@ -1,4 +1,4 @@
-<?php   
+<?php
     include("cabecalho.php");
     include("conecta.php"); 
     include('produtoController.php');
@@ -6,7 +6,7 @@
 <table class="table table-striped table-bordered">
     <?php
         $produtos = listaProdutos($conexao);
-        foreach ($produtos as $produto) { 
+        foreach ($produtos as $produto) {
     ?>
 
     <tr>
@@ -15,7 +15,7 @@
         <td><a class="text-danger" href="remove-produto.php?id=<?=$produto['id']?>">remover</a>
     </tr>
 
-    <?php } // endforeach ?>
+    <?php }// endforeach?>
 </table>
 
 <?php include("rodape.php"); ?>

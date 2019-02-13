@@ -1,4 +1,7 @@
 <?php
+
+/*create table produtos (id integer auto_increment primary key, nome varchar(255), preco decimal(10,2));*/
+
     function insereProduto ($conexao, $nome, $preco) {
             $query = "insert into loja.produtos (nome, preco) values ('{$nome}', {$preco})";
             return mysqli_query($conexao, $query);
@@ -16,7 +19,7 @@
             return $produtos;
     }
 
-function removeProduto($conexao, $id) {
-    $query = "delete from loja.produtos where id = {$id}";
-    return mysqli_query($conexao, $query);
-}
+    function removeProduto($conexao, $id) {
+        $query = "delete from loja.produtos where id = {$id}";
+        return mysqli_query($conexao, $query);
+    }

@@ -12,7 +12,7 @@
 				<div class="navbar-header">
 					<a class="navbar-brand" href="index.php"> Minha Loja</a>
 				</div>
-				<div>
+				<div class="menu">
 					<ul class="nav navbar-nav">
 						<li><a href="produto-formulario.php">Adiciona Produto</a></li>
 						<li><a href="lista-produto.php">Produtos</a></li>
