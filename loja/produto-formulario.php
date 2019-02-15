@@ -21,11 +21,11 @@
         </form>
     </div>
 
+
 <?php 
-    if(array_key_exists("adicionado", $_GET) && $_GET["adicionado"]==true ) { ?>
-        <p class="text-success"> Produto '<?=  $nome; ?>' de valor <? echo $preco; ?> reais adicionado com sucesso! </p>
-<?php 
+    if(isset($_GET["nome"])) { 
+        echo '<p class="text-success"> Produto '.$nome.' de valor '. $preco. ' reais adicionado com sucesso! </p>';
     }
-    
+   
     include("rodape.php"); 
 ?>

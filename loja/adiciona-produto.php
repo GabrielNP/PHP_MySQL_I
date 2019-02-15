@@ -1,5 +1,4 @@
-<?php 
-    
+<?php    
     include("conecta.php");
     include('produtoController.php');
     
@@ -7,17 +6,23 @@
     $preco  = $_GET["preco"];
 
     if (insereProduto($conexao, $nome, $preco)) { 
-        header("Location: produto-formulario.php?adicionado=true");
+        header("Location: produto-formulario.php?adicionado=true&nome=".$nome);
     } else { 
         $msg = mysqli_error($conexao); 
     ?>
         <p class="text-danger">O produto <?= $nome; ?> não foi adicionado! </p>
         <?= $msg?>
-    <?php
-        }
-    ?>      
     
     <?php
+        }
+        
+    if(array_key_exists("adicionado", $_GET) && $_GET["adicionado"]==true ) { 
+        
+
+         echo '<p class="text-success"> Produto '.$nome.' de valor '. $preco. ' reais adicionado com sucesso! </p>';
+
+     }
+    
         /*  FECHA A CONEXÃO -> não precisava fechar, pois o PHP atualmente 
             *  fecha automaticamente após finalizar a leitura deste arquivo.
             *   
@@ -28,4 +33,3 @@
     include("cabecalho.php");
     include("rodape.php"); 
 ?>
-
