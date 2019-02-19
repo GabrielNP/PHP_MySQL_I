@@ -23,9 +23,17 @@
 
 
 <?php 
-    if(isset($_GET["nome"])) { 
+    if(array_key_exists("adicionado", $_GET) && $_GET["adicionado"]==true) { 
+        
+        $nome   = $_GET["nome"];
+        $preco  = $_GET["preco"];
+
         echo '<p class="text-success"> Produto '.$nome.' de valor '. $preco. ' reais adicionado com sucesso! </p>';
     }
+
+    /*if(isset($_GET["nome"]/*, $GET["preco"])) { 
+        echo '<p class="text-success"> Produto '.$_GET["nome"].' de valor '. $_GET["preco"]. ' reais adicionado com sucesso! </p>';
+    }*/
    
     include("rodape.php"); 
 ?>

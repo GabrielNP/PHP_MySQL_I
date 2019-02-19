@@ -6,30 +6,21 @@
     $preco  = $_GET["preco"];
 
     if (insereProduto($conexao, $nome, $preco)) { 
-        header("Location: produto-formulario.php?adicionado=true&nome=".$nome);
+        header("Location: produto-formulario.php?adicionado=true&nome=".$nome."&preco=".$preco);
     } else { 
         $msg = mysqli_error($conexao); 
-    ?>
-        <p class="text-danger">O produto <?= $nome; ?> não foi adicionado! </p>
-        <?= $msg?>
     
-    <?php
-        }
-        
-    if(array_key_exists("adicionado", $_GET) && $_GET["adicionado"]==true ) { 
-        
-
-         echo '<p class="text-success"> Produto '.$nome.' de valor '. $preco. ' reais adicionado com sucesso! </p>';
-
-     }
+       echo '<p class="text-danger">O produto <?= $nome; ?> não foi adicionado! </p>';
+       echo $msg;
     
+    }
+               
         /*  FECHA A CONEXÃO -> não precisava fechar, pois o PHP atualmente 
             *  fecha automaticamente após finalizar a leitura deste arquivo.
             *   
-            *  mysqli_close($conexao);*/ 
-    ?>
-        
-<?php 
+            *  mysqli_close($conexao);
+        */ 
+
     include("cabecalho.php");
     include("rodape.php"); 
 ?>
