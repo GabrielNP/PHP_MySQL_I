@@ -5,6 +5,7 @@
     
     $nome   = $_GET["nome"];
     $preco  = $_GET["preco"];
+    $descricao = $GET["descricao"];
 
     if (insereProduto($conexao, $nome, $preco)) { ?>
         <p class="text-success"> Produto '<?=  $nome; ?>' de valor <? echo $preco; ?> reais adicionado com sucesso! </p>

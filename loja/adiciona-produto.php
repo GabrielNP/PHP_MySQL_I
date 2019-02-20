@@ -4,8 +4,9 @@
     
     $nome   = $_GET["nome"];
     $preco  = $_GET["preco"];
+    $descricao = $GET_["descricao"];
 
-    if (insereProduto($conexao, $nome, $preco)) { 
+    if (insereProduto($conexao, $nome, $preco, $descricao)) { 
         header("Location: produto-formulario.php?adicionado=true&nome=".$nome."&preco=".$preco);
     } else { 
         $msg = mysqli_error($conexao); 
