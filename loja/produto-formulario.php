@@ -2,7 +2,7 @@
         <h1>Cadastro de Produtos</h1>
     </div>
     <div>
-        <form action="adiciona-produto.php">
+        <form action="adiciona-produto.php" method="post">
             <table class="table">
                 <tr>
                     <td>Nome:</td>
