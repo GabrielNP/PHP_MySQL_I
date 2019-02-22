@@ -1,4 +1,9 @@
-<?php include("cabecalho.php");?>
+<?php 
+    include("cabecalho.php");
+    include("conecta.php");
+    include("categoriaController.php");
+?>
+
         <h1>Cadastro de Produtos</h1>
     </div>
     <div>
@@ -17,6 +22,15 @@
                 <tr>
                     <td>Descrição:</td>
                     <td><textarea class="form-control" name="descricao"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>Categoria:</td>
+                    <td>
+                        <?php foreach($categorias as $categoria) : ?>
+                        <input type="radio" class="form-control" name="categoria_id" value="<?=$categoria['id']?>"><?=$categoria['nome']?><br>
+                        <?php endforeach ?>
+                    </td>
                 </tr>
 
                 <tr>
