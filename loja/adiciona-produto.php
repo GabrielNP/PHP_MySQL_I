@@ -4,7 +4,7 @@
     
     $nome   = $_GET["nome"];
     $preco  = $_GET["preco"];
-    $descricao = $GET_["descricao"];
+    $descricao = $_GET["descricao"];
 
     if (insereProduto($conexao, $nome, $preco, $descricao)) { 
         header("Location: produto-formulario.php?adicionado=true&nome=".$nome."&preco=".$preco);

@@ -3,7 +3,7 @@
 /*create table produtos (id integer auto_increment primary key, nome varchar(255), preco decimal(10,2));*/
 
     function insereProduto ($conexao, $nome, $preco, $descricao) {
-            $query = "insert into loja.produtos (nome, preco, descricao) values ('{$nome}', {$preco}, {descricao})";
+            $query = "insert into loja.produtos (nome, preco, descricao) values ('{$nome}', {$preco}, '{$descricao}')";
             return mysqli_query($conexao, $query);
             /* INSERT EM CASO DE CONEXÃO VIA PDO
             * $query = $myPDO->query("insert into loja.produtos (nome, preco) values ('{$nome}', {$preco})");*/
