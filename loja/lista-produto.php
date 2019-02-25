@@ -3,7 +3,7 @@
     include("conecta.php"); 
     include("produtoController.php");
 
-   //$nome   = $_GET["nome"];
+   $nome   = $_GET["nome"];
     if(array_key_exists("removido", $_GET) && $_GET["removido"]=="true") {
         echo '<p class="text-success">Produto removido!</p>';
     }
@@ -20,7 +20,7 @@
         <td><?=$produto['nome'];?></td>
         <td><?=$produto['preco'];?></td>
         <td><?= substr($produto['descricao'], 0, 40)?></td>
-        <td><?=$produto['categoria_id'];?></td>
+        <td><?=$produto['categoria_nome'];?></td>
         <td>
             <form action="remove-produto.php" method="post">
                 <input type="hidden" name="id" value="<?=$produto['id']?>">
@@ -30,7 +30,7 @@
         </td>
     </tr>
 
-    <?php }// endforeach?>
+    <?php } // endforeach?>
 </table>
 
 <?php include("rodape.php"); ?>

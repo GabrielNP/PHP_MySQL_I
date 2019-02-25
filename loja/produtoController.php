@@ -11,7 +11,12 @@
 
     function listaProdutos($conexao) {
             $produtos = array(); // ou $produtos = []; em versões mais recentes do PHP
-            $query = mysqli_query($conexao, "select * from loja.produtos");
+            $query = mysqli_query($conexao, 
+            "select 
+                p.*, 
+                c.nome as categoria_nome
+            from loja.produtos p 
+            left join loja.categorias c on p.categoria_id = c.id");
             // CRIA UM ARRAY COM OS DADOS DENTRO DE UM LOOP
             while ($produto = mysqli_fetch_assoc($query)) {
                 array_push($produtos, $produto);

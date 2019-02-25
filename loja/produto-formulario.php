@@ -30,7 +30,7 @@
                     <td>Categoria:</td>
                     <td>
                         <?php foreach($categorias as $categoria) : ?>
-                        <input type="radio" class="form-control" name="categoria_id" value="<?=$categoria['id']?>"><?=$categoria['nome']?><br>
+                        <input type="radio" name="categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['nome']?><br>
                         <?php endforeach ?>
                     </td>
                 </tr>
