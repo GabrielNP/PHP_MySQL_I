@@ -2,6 +2,8 @@
     include("cabecalho.php");
     include("conecta.php");
     include("categoriaController.php");
+
+    $categorias = listaCategorias($conexao);
 ?>
 
         <h1>Cadastro de Produtos</h1>
