@@ -30,7 +30,9 @@
         </td>
     </tr>
 
-    <?php } // endforeach?>
+    <?php } // endforeach
+    if (empty($produtos)) echo '<p class="text-danger">Não há nada no estoque =(</p>'
+    ?>
 </table>
 
 <?php include("rodape.php"); ?>
