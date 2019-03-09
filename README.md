@@ -18,5 +18,6 @@ CREATE TABLE `loja`.`produtos` (
   `preco` decimal(10,2) DEFAULT NULL,
   `descricao` text,
   `categoria_id` int(11) NOT NULL,
+  `usado` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
