@@ -9,6 +9,17 @@
             * $query = $myPDO->query("insert into loja.produtos (nome, preco) values ('{$nome}', {$preco})");*/
     }
 
+    function atualizaProduto ($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado) {
+        $query = "update loja.produtos set 
+                    nome = '{$nome}',
+                    preco = {$preco},
+                    descricao = '{$descricao}',
+                    categoria_id = {$categoria_id},
+                    usado = {$usado}
+                 where id = '{$id}'";
+        return mysqli_query($conexao, $query);
+    }
+
     function listaProdutos($conexao) {
             $produtos = array(); // ou $produtos = []; em versões mais recentes do PHP
             $query = mysqli_query($conexao, 
@@ -27,4 +38,10 @@
     function removeProduto($conexao, $id) {
         $query = "delete from loja.produtos where id = {$id}";
         return mysqli_query($conexao, $query);
+    }
+
+    function buscaProduto($conexao, $id) {
+        $query = "select * from loja.produtos where id = {$id}";
+        $resultado = mysqli_query($conexao, $query);
+        return mysqli_fetch_assoc($resultado);
     }

@@ -20,12 +20,21 @@
         <td><?=$produto['nome'];?></td>
         <td><?=$produto['preco'];?></td>
         <td><?= substr($produto['descricao'], 0, 40)?></td>
-        <td><?=$usado ?></td>
+        <td>
+            <?php if ($usado) {
+                echo 'Usado';
+            } else {
+                echo 'Novo';
+                }
+            ?>
+        </td>
         <td><?=$produto['categoria_nome'];?></td>
+        <td>
+            <a href="altera-produto-formulario.php?id=<?=$produto['id']?>" class="btn btn-primary">editar
+        </td>
         <td>
             <form action="remove-produto.php" method="post">
                 <input type="hidden" name="id" value="<?=$produto['id']?>">
-
                 <button class="btn btn-danger">remover</button>
             </form>
         </td>
@@ -36,4 +45,13 @@
     ?>
 </table>
 
-<?php include("rodape.php"); ?>
+<?php 
+    if(array_key_exists("alterado", $_GET) && $_GET["alterado"]==true) { 
+        
+        $nome   = $_GET["nome"];
+        $preco  = $_GET["preco"];
+
+        echo '<p class="text-success"> Produto '.$nome.' de valor '. $preco. ' reais alterado com sucesso! </p>';
+    }
+    
+    include("rodape.php"); ?>
