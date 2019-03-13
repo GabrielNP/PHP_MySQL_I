@@ -1,8 +1,15 @@
-<?php include("cabecalho.php");?>
+<?php 
+    include("cabecalho.php");
+    include("conecta.php");
+    include("categoriaController.php");
+
+    $categorias = listaCategorias($conexao);
+?>
+
         <h1>Cadastro de Produtos</h1>
     </div>
     <div>
-        <form action="adiciona-produto.php">
+        <form action="adiciona-produto.php" method="post">
             <table class="table">
                 <tr>
                     <td>Nome:</td>
@@ -17,6 +24,21 @@
                 <tr>
                     <td>Descrição:</td>
                     <td><textarea class="form-control" name="descricao"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>Usado?</td>
+                    <td><input type="checkbox" value="true" name="usado">Usado
+                </tr>
+
+                <tr>
+                    <td>Categoria:</td>
+                    <td>
+                        <select name="categoria_id" class="form-control">
+                            <?php foreach($categorias as $categoria) : ?>
+                            <option name="categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['nome']?></option>
+                            <?php endforeach ?>
+                    </td>
                 </tr>
 
                 <tr>
