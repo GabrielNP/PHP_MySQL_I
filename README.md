@@ -22,7 +22,7 @@ CREATE TABLE `loja`.`produtos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `loja`.`usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL,
