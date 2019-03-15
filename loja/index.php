@@ -13,19 +13,19 @@
 	<br>
 	<h2></h2>
 
-	<form action="login.php" >
+	<form action="login.php" method="post">
 	<br>
 		<tr>
-			<td><input id="login" class="form-control" type=text placeholder="Login"></td>
+			<td><input id="login" name="email" class="form-control" type=text placeholder="Login"></td>
 		</tr>
 		<br>
 		<tr>
-			<td><input id="senha" class="form-control" type="password" placeholder="Senha"></td>
+			<td><input id="senha" name="senha" class="form-control" type="password" placeholder="Senha"></td>
 		</tr>
 		<tr>
 			<td><input type="checkbox" onclick="myFunction()">Mostrar senha</td>
 		</tr>
-		<br>
+		<br><br>
 		<tr>
 			<td><input type="submit" class="btn btn-primary" value="Entrar"></td>
 	</form>
