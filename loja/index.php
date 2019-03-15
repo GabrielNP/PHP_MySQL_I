@@ -13,6 +13,10 @@
 	<br>
 	<h2></h2>
 
+<?php if (isset($_COOKIE["usuario_logado"])) { ?>
+		<p class="text-success">Você está logado como <?=$_COOKIE["usuario_logado"]?></p>
+<?php } else { 
+?>
 	<form action="login.php" method="post">
 	<br>
 		<tr>
@@ -29,5 +33,7 @@
 		<tr>
 			<td><input type="submit" class="btn btn-primary" value="Entrar"></td>
 	</form>
-<?php include("rodape.php"); ?>
+	
+<?php }
+	include("rodape.php"); ?>
 

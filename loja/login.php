@@ -6,7 +6,8 @@
     $senha = $_POST["senha"];
     
     $usuario = buscaUsuario($conexao, $email, $senha);
-    //var_dump($usuario);
+    setcookie("usuario_logado", $usuario["email"], time() + 10);
+
     if($usuario == null) {
         header("Location: index.php?login=0");
         die();
