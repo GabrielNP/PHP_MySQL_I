@@ -6,8 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>		
+		<script type="text/javascript" src="js/main.js"></script>		
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">

@@ -2,11 +2,11 @@
     include('userController.php');
     include('conecta.php');
 
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-
-    $usuario = buscaUsuario($conexao, $_POST["email"], $_POST["senha"]);
-    var_dump($usuario);
+    $email = $_GET["email"];
+    $senha = $_GET["senha"];
+    
+    $usuario = buscaUsuario($conexao, $_GET["email"], $_GET["senha"]);
+    var_dump($senha);
     /*if($usuario == null) {
         header("Location: index.php?login=0");
         die();
@@ -14,5 +14,4 @@
         header("Location: index.php?login=1");
         die();
       }*/
-      
 ?>
