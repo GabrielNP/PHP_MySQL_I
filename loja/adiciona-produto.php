@@ -2,6 +2,9 @@
     include("conecta.php");
     include("produtoController.php");
     include("categoriaController.php");
+    include("usuario.php");
+    
+    verificaUsuario();
     
     $nome   = $_POST["nome"];
     $preco  = $_POST["preco"];

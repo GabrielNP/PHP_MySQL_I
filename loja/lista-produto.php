@@ -1,12 +1,16 @@
 <?php
-    include("cabecalho.php");
     include("conecta.php"); 
     include("produtoController.php");
+    include("usuario.php");
+    
+    verificaUsuario();
 
    $nome   = $_GET["nome"];
     if(array_key_exists("removido", $_GET) && $_GET["removido"]=="true") {
         echo '<p class="text-success">Produto removido!</p>';
     }
+
+    include("cabecalho.php");
 ?>
 
 <table class="table table-striped table-bordered">
@@ -54,4 +58,6 @@
         echo '<p class="text-success"> Produto '.$nome.' de valor '. $preco. ' reais alterado com sucesso! </p>';
     }
     
-    include("rodape.php"); ?>
+    
+    include("rodape.php"); 
+?>

@@ -1,4 +1,5 @@
 <?php 
+	include("usuario.php");
 	include("cabecalho.php"); 
 
 	if(isset($_GET["login"]) && $_GET["login"]==true) {
@@ -8,13 +9,19 @@
 		echo '<p class="alert-danger">Usuário/senha inválidos!';
         $msg = mysqli_error($conexao);
 	}
+	if (isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"]==true) {
+		echo '<p class="alert-danger">Permissão negada!';
+	}
+	if (isset($_GET["logout"]) && $_GET["logout"]==true) {
+		echo '<p class="alert-primary">Até mais...';
+	}
 ?>
 	<h1>Bem-vindo de volta!</h1>
 	<br>
 	<h2></h2>
 
-<?php if (isset($_COOKIE["usuario_logado"])) { ?>
-		<p class="text-success">Você está logado como <?=$_COOKIE["usuario_logado"]?></p>
+<?php if (usuarioEstaLogado()) { ?>
+		<p class="text-success">Você está logado como <?=usuarioLogado()?></p>
 <?php } else { 
 ?>
 	<form action="login.php" method="post">
