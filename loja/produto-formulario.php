@@ -1,7 +1,11 @@
 <?php 
-    include("cabecalho.php");
     include("conecta.php");
     include("categoriaController.php");
+    include("usuario.php");
+    
+    verificaUsuario();
+
+    include("cabecalho.php");
 
     $categorias = listaCategorias($conexao);
 ?>
@@ -61,6 +65,7 @@
     /*if(isset($_GET["nome"]/*, $GET["preco"])) { 
         echo '<p class="text-success"> Produto '.$_GET["nome"].' de valor '. $_GET["preco"]. ' reais adicionado com sucesso! </p>';
     }*/
-   
+
+    
     include("rodape.php"); 
 ?>

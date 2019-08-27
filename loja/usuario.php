@@ -16,11 +16,13 @@
         }
     }
 
-    function usuarioLogado($email) {
+    function usuarioLogado() {
         return $_SESSION["usuario_logado"];
     }
-
+    
     function logout() {
         session_destroy();
+        header("Location:index.php?logout=true");
+        die();
     }
 ?>

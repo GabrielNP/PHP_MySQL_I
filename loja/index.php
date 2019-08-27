@@ -1,10 +1,7 @@
 <?php 
 	include("usuario.php");
 	include("cabecalho.php");
-	
-	if (isset($_GET["logout"]) && $_GET["logout"]==true) {
-		echo '<p class="alert-success">Deslogado com sucesso!</p>';
-	}
+
 
 	if (isset($_GET["login"]) && $_GET["login"]==true) {
 		echo '<p class="alert-success">OK!</p>';
@@ -15,17 +12,20 @@
         $msg = mysqli_error($conexao);
 	}
 
-	if (isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"]==true) {
-		echo '<p class="alert-danger">Permissao negada</p>';
-	}
+	echo '<h1>Bem-vindo de volta!</h1>';
 
-	echo '<h1>Bem-vindo de volta!</h1>
-	<br>
-	<h2></h2>';
+	if (isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"]==true) {
+		echo '<p class="alert-danger">Permissão negada!';
+	}
+	
+	if (isset($_GET["logout"]) && $_GET["logout"]==true) {
+		echo '<p class="alert-primary">Até mais...';
+	}
 
 	if (usuarioEstaLogado()) {
 			echo '<p class="text-success">Você está logado como <?= usuarioLogado() ?>.<a href="logout.php">Deslogar</a></p>';
 	} else {
+
 ?>
 	<form action="login.php" method="post">
 	<br>
